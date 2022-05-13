@@ -1,0 +1,7 @@
+/**
+ * This fixes the height of the full height image for longform-visual.
+ * normally it uses js but all scripts are deleted so I use this fix.
+ */
+.headline__wrapper {
+    height: 100vh !important;
+}

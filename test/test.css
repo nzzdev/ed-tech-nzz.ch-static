@@ -1,0 +1,39 @@
+#test-id {
+    border: 1px solid #000;
+    height: 100px;
+    position: relative;
+}
+
+#test-id:after {
+    color: #000;
+    content: "Hello world.";
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 50px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+#test-id-2 {
+    border: 1px solid red;
+    height: 100px;
+    position: relative;
+}
+
+#test-id-2:after {
+    color: #000;
+    content: "Hello world 2.";
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 50px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
