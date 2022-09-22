@@ -1,10 +1,10 @@
 {
   "name": "@nzz/nzz.ch-static",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Static version of nzz.ch to use in projects to enable you to locally embed custom code",
   "main": "index.js",
   "scripts": {
-    "start": "npm run start-regular",
+    "start": "npm run start-lv",
     "start-regular": "LAYOUT=regular run-p sirv rollup",
     "start-ls": "LAYOUT=longform-standard run-p sirv rollup",
     "start-lv": "LAYOUT=longform-visual run-p sirv rollup",
