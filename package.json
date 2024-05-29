@@ -1,6 +1,6 @@
 {
   "name": "@nzz/nzz.ch-static",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Static version of nzz.ch to use in projects to enable you to locally embed custom code",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "start-regular": "LAYOUT=regular run-p sirv rollup",
     "start-ls": "LAYOUT=longform-standard run-p sirv rollup",
     "start-lv": "LAYOUT=longform-visual run-p sirv rollup",
+    "start-hlv": "LAYOUT=headless-longform-visual run-p sirv rollup",
     "rollup": "rollup -c -w",
     "sirv": "sirv build-test --dev --port 5555 --host 0.0.0.0"
   },
