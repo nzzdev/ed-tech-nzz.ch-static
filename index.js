@@ -70,9 +70,9 @@ function setCss(options) {
     // simulate dark mode
     if (options.darkMode) {
         let darkModeCss = fs.readFileSync(path.resolve(__dirname, `src/darkmode/darkmode.css`), 'utf8');
-        nzzCss = nzzCSS + '\n\n' + darkModeCss;
+        nzzCSS = nzzCSS + '\n\n' + darkModeCss;
     }
-    html = html.replace('${NZZ_CSS}', nzzCss);
+    html = html.replace('${NZZ_CSS}', nzzCSS);
 
 
     // Set custom css we defined in this library to override some styles.
