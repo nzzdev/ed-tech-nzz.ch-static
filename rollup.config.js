@@ -33,6 +33,10 @@ function getHtmlOptions() {
                 lead: 'Test lead.',
                 title: 'Test title',
 
+                // Dark mode and/or colored background
+                darkMode: true,
+                articleBg: '#264255',
+
                 // Links to other css files that need to be loaded.
                 // Will be appended to <head> but before the bundled css file of your app.
                 customCssLinks: [

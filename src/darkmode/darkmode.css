@@ -1,0 +1,21 @@
+
+.nzz-container,
+.header-main,
+.container--article,
+.q-embed,
+#footer {
+  background-color: #000;
+  color: #fff;
+}
+.header-button,
+.nzz-icons--icon {
+  color: #fff;
+}
+.header__logo--icon path {
+  fill: #fff !important;
+}
+.icon--menu path,
+.header__user path,
+.header__user circle {
+  stroke: #fff !important;
+}

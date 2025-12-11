@@ -1,0 +1,1 @@
+document.body.setAttribute('class', (document.body.getAttribute('class') ?? '') + ' dark-mode');

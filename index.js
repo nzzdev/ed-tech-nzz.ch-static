@@ -24,6 +24,8 @@ function getHtml(options = {}) {
         builtCssFilename,
         builtJsFilename,
         customJsLinks,
+        darkMode,
+        articleBg
     } = options;
 
     // Load the layout base.
@@ -38,6 +40,17 @@ function getHtml(options = {}) {
 
     html = html.replace('${BUILT_CSS_FILE}', builtCssFilename);
     html = html.replace('${BUILT_JS_FILE}', builtJsFilename);
+
+    if (darkMode) {
+        const darkModeJs = fs.readFileSync(path.resolve(__dirname, 'src/darkmode/darkmode.js'), 'utf8');
+        html = html.replace('</body>', `<script type="text/javascript">${darkModeJs}</script></body>`);
+    }
+    if (articleBg) {
+        const articleBgColorJs = fs.readFileSync(path.resolve(__dirname, 'src/darkmode/articleBgColor.js'), 'utf8')
+            + `\n setArticleBg("${articleBg}")`;
+
+        html = html.replace('</body>', `<script type="text/javascript">${articleBgColorJs}</script></body>`);
+    }
 
     replaceExternalCustomJsLinks(customJsLinks);
 
@@ -54,7 +67,13 @@ function setCss(options) {
 
     // Set the css in the HTML.
     let nzzCSS = fs.readFileSync(path.resolve(__dirname, `src/${layout}/style.css`), 'utf8');
-    html = html.replace('${NZZ_CSS}', nzzCSS);
+    // simulate dark mode
+    if (options.darkMode) {
+        let darkModeCss = fs.readFileSync(path.resolve(__dirname, `src/darkmode/darkmode.css`), 'utf8');
+        nzzCss = nzzCSS + '\n\n' + darkModeCss;
+    }
+    html = html.replace('${NZZ_CSS}', nzzCss);
+
 
     // Set custom css we defined in this library to override some styles.
     const customCSS = fs.readFileSync(path.resolve(__dirname, 'src/nzz.ch-custom.css'), 'utf8');
